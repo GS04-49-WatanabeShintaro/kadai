@@ -75,14 +75,7 @@ fclose($fq);                          //ファイルを閉じる
 </script>
 
 <br>
-<b>DATA</b><br>
-書き込んだcsvは「<?=$fileSearch ?>」です。<br>
-あなたの解いた問題は「<?=$qText ?>」です。<br>
-あなたの選んだ答えは「<?=$answer ?>」です。<br>
-この問題に答えた人数は<?=$num - 1 ?>人で、<br>
-Yesの人は<?=$yesko ?>人で、Noの人は<?=$noko ?>人です。<br>
-つまり、Yesは<?=$yesPer ?>%で、Noは<?=$noPer ?>%です。<br>
-<br>
+
 
 
 <div id="drowareaContainer">
@@ -137,6 +130,18 @@ setTimeout(yesDelay, 2500);
 
 <div class="linkText">
 <a href ="index.php"><u><b>次の問題に進む</b></u></a>
+</div>
+
+<br><br>
+<div class="text-right dataMode">
+<b>DATA</b><br>
+書き込んだcsvは「<?=$fileSearch ?>」です<br>
+あなたの解いた問題は「<?=$qText ?>」です<br>
+あなたの選んだ答えは「<?=$answer ?>」です<br>
+この問題に答えた人数は<?=$num - 1 ?>人で<br>
+Yesの人は<?=$yesko ?>人で、Noの人は<?=$noko ?>人です<br>
+つまり、Yesは<?=$yesPer ?>%で、Noは<?=$noPer ?>%です<br>
+<br>
 </div>
 
 </body>
