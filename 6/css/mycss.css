@@ -1,0 +1,106 @@
+/* htmlとbodyにheight100%を指定すると背景が画面いっぱい */
+html {
+	height: 100%;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	font-size: 14px;
+	background-image: url("../img/bg.jpg");
+	background-size: cover;
+	background-position: center;
+	color: white;
+	padding-top: 20px;
+}
+
+.qPanel {
+	background-color: rgba(0, 0, 0, 0.6);
+	margin: 20px;
+	padding:12px;
+}
+
+/*文字を出現させるために必要*/
+.textSplitLoad {
+    display: none;
+}
+.split {
+    visibility: hidden;
+}
+/*文字を出現終了*/
+
+.countPanel {
+	margin: 20px;
+}
+
+#cd-text {
+	font-size: 24px;
+	margin-left: 8px;
+}
+
+.yesnoPanel {
+	margin-top: 48px;
+}
+
+.yesBtn {
+	background-color: blue;
+	text-align: center;
+	padding:2px 10px 2px;
+	font-size: 20px;
+	border: none;
+	border-radius: 12px;
+	box-shadow: 0px 0px 8px white;
+	transition-duration: 0.3s;
+}
+
+.yesBtn:hover {
+	box-shadow: 0px 0px 24px white;
+	transition-duration: 0.3s;
+}
+
+.noBtn {
+	background-color: red;
+	text-align: center;
+	padding:2px 10px 2px;
+	font-size: 20px;
+	border: none;
+	border-radius: 12px;
+	box-shadow: 0px 0px 8px white;
+	transition-duration: 0.3s;
+}
+
+.noBtn:hover {
+	box-shadow: 0px 0px 24px white;
+	transition-duration: 0.3s;
+}
+
+/* resurtページ */
+#drowareaContainer {
+	margin: 50px;
+	position:relative;
+}
+
+#yesPosition {
+	position: absolute;
+	top:15%;
+	font-size: 24px;
+}
+
+#noPosition {
+	position: absolute;
+	top:15%;
+	right:0px;
+	font-size: 24px;
+}
+
+
+/* createページ */
+#createPage {
+	margin:8px 16px;
+	color:black;
+}
+
+#createPage textarea{
+	max-width: 100%;
+}
