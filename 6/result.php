@@ -76,7 +76,10 @@ fclose($fq);                          //ファイルを閉じる
 
 <br>
 
-
+<p class="text-center">
+あなたの回答は「<b><?=$answer ?></b>」でした！<br>
+「<b><?=$qText ?></b>」のみんな回答は…
+</p>
 
 <div id="drowareaContainer">
 <canvas id="sample" height="500" width="500"></canvas>
@@ -138,16 +141,11 @@ document.addEventListener('touchmove', function(e) {
 <a href ="index.php"><u><b>次の問題に進む</b></u></a>
 </div>
 
-<br><br>
+<br>
 <div class="text-right dataMode">
 <b>DATA</b><br>
-書き込んだcsvは「<?=$fileSearch ?>」です<br>
-あなたの解いた問題は「<?=$qText ?>」です<br>
-あなたの選んだ答えは「<?=$answer ?>」です<br>
-この問題に答えた人数は<?=$num - 1 ?>人で<br>
-Yesの人は<?=$yesko ?>人で、Noの人は<?=$noko ?>人です<br>
-つまり、Yesは<?=$yesPer ?>%で、Noは<?=$noPer ?>%です<br>
-<br>
+この問題に答えた人数は<?=$num - 1 ?>人です<br>
+Yesの人は<?=$yesko ?>人で、Noの人は<?=$noko ?>人です
 </div>
 
 </body>

@@ -28,20 +28,7 @@
         $num = count($array); //配列の数を調べてnumに代入。全問題数。
         $qID = rand(0, $num-2);//今回の問題をランダムに選択する。問題番号。
 
-         echo
-         "<script>
-           if(localStorage.getItem('playedNumber') == ''){
-             var playedNumber = new Array();
-             playedNumber.push($qID);
-             localStorage.setItem('playedNumber', JSON.stringify(playedNumber));
-             console.log(playedNumber);
-           } else {
-             var playedNumber =  JSON.parse(localStorage.getItem('playedNumber'));
-             playedNumber.push($qID);
-             localStorage.setItem('playedNumber', JSON.stringify(playedNumber));
-             console.log(playedNumber);
-           }
-         </script>";
+
          //jsでlocalstorageにプレイした問題番号を保存
           //jsで読み込んだlocalstorageでプレイ済み問題に当たらないようにしたかったけど、
           //phpの処理が先なせいで配列を渡せないっぽいので諦めました。
@@ -108,6 +95,20 @@ document.addEventListener('touchmove', function(e) {
   }
 }, false);
 
+if(localStorage.getItem('playedNumber') != null){
+  var playedNumber =  JSON.parse(localStorage.getItem('playedNumber'));
+  playedNumber.push(<?php echo json_encode($qID); ?>);
+  localStorage.setItem('playedNumber', JSON.stringify(playedNumber));
+  console.log(playedNumber);
+  console.log("空でなければ");
+} else {
+  var playedNumber = new Array();
+  playedNumber.push(<?php echo json_encode($qID); ?>);
+  localStorage.setItem('playedNumber', JSON.stringify(playedNumber));
+  console.log(playedNumber);
+  console.log("それ以外");
+}
+
 //現在までの回答数表示。本当は回答数じゃないけど。
 $("#playedQuestion").html( "現在 <b>" + playedNumber.length + "</b> 問に回答済み" );
   });
@@ -150,7 +151,7 @@ $("#playedQuestion").html( "現在 <b>" + playedNumber.length + "</b> 問に回�
 </div>
 
 <div class="linkText">
-<a href="create.php"><u><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>質問を作成する</u></a>
+<a href="create.php"><u>質問を作成する</u></a>
 </div>
 
 <!-- <form method="post" action="result.php" style="color:black">
