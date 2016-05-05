@@ -101,6 +101,14 @@ function countDown(){
 countDown();
 //カウントダウン終了
 
+//縦スクロール禁止
+document.addEventListener('touchmove', function(e) {
+  if (window.innerHeight >= document.body.scrollHeight) {
+    e.preventDefault();
+  }
+}, false);
+
+//現在までの回答数表示。本当は回答数じゃないけど。
 $("#playedQuestion").html( "現在 <b>" + playedNumber.length + "</b> 問に回答済み" );
   });
   </script>

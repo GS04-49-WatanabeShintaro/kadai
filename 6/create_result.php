@@ -54,7 +54,16 @@ if(strpos($userQuestion,',') !== FALSE){
 
 
 <script>
+$(document).ready(function(){
 
+//縦スクロール禁止
+document.addEventListener('touchmove', function(e) {
+  if (window.innerHeight >= document.body.scrollHeight) {
+    e.preventDefault();
+  }
+}, false);
+
+});
 </script>
 
 

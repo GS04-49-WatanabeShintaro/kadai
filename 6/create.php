@@ -27,7 +27,7 @@
 <div id="createPage">
 <form method="post" action="create_result.php">
 <p class="white">みんなに聞きたい質問を入力してください。<br><small>※「,」は使用できません。</small></p>
-<p><input type="text" name="userQuestion" size="50"></p>
+<p><input type="text" name="userQuestion" size="40"></p>
 <p><input type="submit" value="問題を投稿する" class="submitBtn"></p>
 </form>
 </div>
@@ -37,7 +37,16 @@
 </div>
 
 <script>
+$(document).ready(function(){
 
+//縦スクロール禁止
+document.addEventListener('touchmove', function(e) {
+  if (window.innerHeight >= document.body.scrollHeight) {
+    e.preventDefault();
+  }
+}, false);
+
+  });
 </script>
 
 
