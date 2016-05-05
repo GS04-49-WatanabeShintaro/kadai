@@ -26,13 +26,15 @@
 
 <div id="createPage">
 <form method="post" action="create_result.php">
-みんなに聞きたい質問を入力してください。<br>
-<!-- <textarea name="userQuestion" rows="6" cols="50"></textarea> -->
+<p class="white">みんなに聞きたい質問を入力してください。<br><small>※「,」は使用できません。</small></p>
 <p><input type="text" name="userQuestion" size="50"></p>
-<p><input type="submit" value="送信"></p>
+<p><input type="submit" value="問題を投稿する" class="submitBtn"></p>
 </form>
 </div>
 
+<div class="linkText">
+<a href="index.php"><u>回答ページに戻る</u></a>
+</div>
 
 <script>
 

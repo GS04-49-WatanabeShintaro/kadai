@@ -15,10 +15,16 @@ body {
 	padding-top: 20px;
 }
 
+.playedQuestion {
+	margin-right: 8px;
+}
+
 .qPanel {
 	background-color: rgba(0, 0, 0, 0.6);
 	margin: 20px;
 	padding:12px;
+	border: 1px solid white;
+
 }
 
 /*文字を出現させるために必要*/
@@ -46,7 +52,7 @@ body {
 .yesBtn {
 	background-color: blue;
 	text-align: center;
-	padding:2px 10px 2px;
+	padding:80px 10px 80px;
 	font-size: 20px;
 	border: none;
 	border-radius: 12px;
@@ -62,7 +68,7 @@ body {
 .noBtn {
 	background-color: red;
 	text-align: center;
-	padding:2px 10px 2px;
+	padding:80px 10px 80px;
 	font-size: 20px;
 	border: none;
 	border-radius: 12px;
@@ -73,6 +79,20 @@ body {
 .noBtn:hover {
 	box-shadow: 0px 0px 24px white;
 	transition-duration: 0.3s;
+}
+
+.linkText {
+	color: white;
+	margin-top: 60px;
+	margin-left: 20px;
+}
+
+.linkText a {
+	color: white;
+}
+
+.linkText a visited {
+	color: white;
 }
 
 /* resurtページ */
@@ -103,4 +123,24 @@ body {
 
 #createPage textarea{
 	max-width: 100%;
+}
+
+.submitBtn {
+	background-color: grey;
+	text-align: center;
+	padding:8px 10px 8px;
+	margin-top: 12px;
+	font-size: 16px;
+	border: none;
+	border-radius: 12px;
+	box-shadow: 0px 0px 8px white;
+	color: white;
+}
+
+.white {
+	color:white;
+}
+
+.resultPhpText {
+	margin-left: 20px;
 }

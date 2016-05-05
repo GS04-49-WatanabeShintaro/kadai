@@ -32,7 +32,6 @@ $str = $answer.",";
 
 //問題ごとのファイル名を作る
 $fileSearch = "data/yn".$qNumber.".csv";
-echo $fileSearch;
 
 //yes or noをファイルに書き込んでいく
 $file = fopen($fileSearch,"a"); //決まり事。書き込む前にファイルオープン。
@@ -76,6 +75,8 @@ fclose($fq);                          //ファイルを閉じる
 </script>
 
 <br>
+<b>DATA</b><br>
+書き込んだcsvは「<?=$fileSearch ?>」です。<br>
 あなたの解いた問題は「<?=$qText ?>」です。<br>
 あなたの選んだ答えは「<?=$answer ?>」です。<br>
 この問題に答えた人数は<?=$num - 1 ?>人で、<br>
@@ -134,7 +135,9 @@ setTimeout(yesDelay, 2500);
 });
 </script>
 
-<a href ="index.php">次の問題に進む</a>
+<div class="linkText">
+<a href ="index.php"><u><b>次の問題に進む</b></u></a>
+</div>
 
 </body>
 </html>

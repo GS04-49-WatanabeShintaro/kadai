@@ -19,34 +19,34 @@
   </head>
 <body>
 
+
+
 <?php
   $fp = @fopen("data/question.csv", "r");  //ファイルを開く
   flock($fp, LOCK_SH);                      //ファイルロック
   while ($array = fgetcsv( $fp )) { //カンマ区切りのcsvをarrayに入れて配列化
         $num = count($array); //配列の数を調べてnumに代入。全問題数。
-        echo $num;
         $qID = rand(0, $num-2);//今回の問題をランダムに選択する。問題番号。
-        echo $qID;
 
-        echo //jsでlocalstorageにプレイした問題番号を保存
-          "<script>
-            if(localStorage.getItem('playedNumber') == ''){
-              var playedNumber = new Array();
-              playedNumber.push($qID);
-              localStorage.setItem('playedNumber', JSON.stringify(playedNumber));
-              console.log(playedNumber);
-            } else {
-              var playedNumber =  JSON.parse(localStorage.getItem('playedNumber'));
-              playedNumber.push($qID);
-              localStorage.setItem('playedNumber', JSON.stringify(playedNumber));
-              console.log(playedNumber);
-            }
-          </script>;";
+         echo
+         "<script>
+           if(localStorage.getItem('playedNumber') == ''){
+             var playedNumber = new Array();
+             playedNumber.push($qID);
+             localStorage.setItem('playedNumber', JSON.stringify(playedNumber));
+             console.log(playedNumber);
+           } else {
+             var playedNumber =  JSON.parse(localStorage.getItem('playedNumber'));
+             playedNumber.push($qID);
+             localStorage.setItem('playedNumber', JSON.stringify(playedNumber));
+             console.log(playedNumber);
+           }
+         </script>";
+         //jsでlocalstorageにプレイした問題番号を保存
           //jsで読み込んだlocalstorageでプレイ済み問題に当たらないようにしたかったけど、
           //phpの処理が先なせいで配列を渡せないっぽいので諦めました。
 
         $qText = $array[$qID];//今回の問題のテキスト
-        echo $qText;
   }
 
   flock($fp, LOCK_UN);            //ロック解除
@@ -101,8 +101,11 @@ function countDown(){
 countDown();
 //カウントダウン終了
 
+$("#playedQuestion").html( "現在 <b>" + playedNumber.length + "</b> 問に回答済み" );
   });
   </script>
+<p id="playedQuestion" class="text-right playedQuestion">現在0問に回答済み</p>
+
 
 <div id="questionPanel" class="qPanel">
   <h4><b>問題</b></h4>
@@ -136,6 +139,10 @@ countDown();
     </form>
   </div>
 </div>
+</div>
+
+<div class="linkText">
+<a href="create.php"><u><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>質問を作成する</u></a>
 </div>
 
 <!-- <form method="post" action="result.php" style="color:black">

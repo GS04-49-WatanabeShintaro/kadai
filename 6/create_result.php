@@ -26,9 +26,9 @@
 $userQuestion = $_POST["userQuestion"];
 
 if(strpos($userQuestion,',') !== FALSE){
-  echo "問題文にカンマがあると登録できません。戻って作成しなおしてください。";
+  $resultText = "問題文にカンマがあると登録できません。戻って作成しなおしてください。";
 } else {
-  echo "問題を追加しました！";
+  $resultText = "問題を追加しました！";
   //ファイルに書き込む文字列にする
   $str = $userQuestion.",";
 
@@ -40,17 +40,15 @@ if(strpos($userQuestion,',') !== FALSE){
   fclose($file); //ファイルを閉じる
 }
 
-
-
-
 ?>
 
-<br><br><br><br>
 
-<a href="create.php">問題作成ページに戻る</a>
+<p class="resultPhpText"><b><?= $resultText ?></b></p>
+<div class="linkText">
+<a href="create.php"><u>問題作成ページに戻る</u></a>
 <br><br>
-<a href="index.php">解答ページにいく</a>
-
+<a href="index.php"><u>回答ページにいく</u></a>
+</div>
 
 
 
