@@ -34,6 +34,8 @@
 
 <div class="linkText">
 <a href="index.php"><u>回答ページに戻る</u></a>
+<br><br><br>
+<a href="qlist.php"><u>問題一覧</u></a>
 </div>
 
 <script>

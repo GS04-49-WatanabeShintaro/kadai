@@ -141,7 +141,6 @@ document.addEventListener('touchmove', function(e) {
 <a href ="index.php"><u><b>次の問題に進む</b></u></a>
 </div>
 
-<br>
 <div class="text-right dataMode">
 <b>DATA</b><br>
 この問題に答えた人数は<?=$num - 1 ?>人です<br>

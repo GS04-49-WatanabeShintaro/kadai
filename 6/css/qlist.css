@@ -1,0 +1,38 @@
+/* htmlとbodyにheight100%を指定すると背景が画面いっぱい */
+html {
+	height: 100%;
+}
+
+body {
+	width: 100%;
+
+	margin: 0 auto;
+	font-size: 14px;
+	background-image: url("../img/bg1.jpg");
+	background-size: cover;
+	background-position: center;
+	color: white;
+	padding-top: 20px;
+}
+
+.linkText {
+	color: white;
+	margin-top: 28px;
+	margin-left: 20px;
+}
+
+.linkText a {
+	color: white;
+}
+
+.linkText a visited {
+	color: white;
+}
+
+.white {
+	color:white;
+}
+
+.resultPhpText {
+	margin-left: 20px;
+}
