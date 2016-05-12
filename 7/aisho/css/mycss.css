@@ -1,0 +1,56 @@
+/* htmlとbodyにheight100%を指定すると背景が画面いっぱい */
+html {
+	height: 100%;
+}
+
+body {
+	width: 100%;
+	margin: 0 auto;
+	font-size: 14px;
+	background-image: url("../img/skull01.gif");
+	color: white;
+	padding: 20px;
+}
+
+.img-responsive-overwrite{
+    margin: 0 auto;
+}
+
+small {
+	color: rgba(255, 255, 255, 0.7);
+}
+
+button {
+	background-color: rgba(255, 0, 0, 0.5);
+	border-color: pink;
+	margin-top: 8px;
+}
+
+/* resurtページ */
+#drowareaContainer {
+	margin: 50px;
+	position:relative;
+}
+
+#yesPosition {
+	position: absolute;
+	top:15%;
+	font-size: 40px;
+}
+
+#noPosition {
+	position: absolute;
+	top:15%;
+	right:0px;
+	font-size: 24px;
+}
+
+input {
+	color: black;
+}
+
+#tinyUrl {
+	background-color: rgba(0, 0, 0, 0.5);
+	padding: 8px 12px;
+	margin:16px 8px;
+}
