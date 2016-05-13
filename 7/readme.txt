@@ -2,7 +2,7 @@ aishoはphpで作ったイタズラ相性診断が入っています。
 例によってURLがあるのでこちらからどうぞ！
 スマホ専用なのでスマホで見て頂けると嬉しいです。
 データベース使ってません…ｗ
-http://rog-e.com/app/shindan/top.php
+http://d4c.sakura.ne.jp/app/shindan/top.php
 
 機能追加予定
 ・自分の名前を入力する欄を作って、
