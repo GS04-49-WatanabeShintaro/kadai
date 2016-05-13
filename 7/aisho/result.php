@@ -37,10 +37,10 @@ $body = $you."さんでした！\n";
 $header = "MIME-Version: 1.0\r\n"
 	  . "Content-Transfer-Encoding: 7bit\r\n"
 	  . "Content-Type: text/plain; charset=ISO-2022-JP\r\n"
-	  . "Message-Id: <" . md5(uniqid(microtime())) . "@rog-e.com>\r\n"
-	  . "From:  <app@rog-e.com>\r\n";
+	  . "Message-Id: <" . md5(uniqid(microtime())) . "@d4c.sakura.ne.jp>\r\n"
+	  . "From:  <app@d4c.sakura.ne.jp>\r\n";
 
-$mflg = mb_send_mail($to,$subject,$body,mb_encode_mimeheader($header),"-f app@rog-e.com");
+$mflg = mb_send_mail($to,$subject,$body,mb_encode_mimeheader($header),"-f app@d4c.sakura.ne.jp");
 if( $mflg==false ){
 	echo "<small>診断失敗したかも…</small>";
 }else{
