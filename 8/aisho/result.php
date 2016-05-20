@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>秘密</title>
-    <meta name="description" content="秘密">
+    <title>診断結果</title>
+    <meta name="description" content="診断完了!!">
     <meta name="keywords" content="占い,診断">
     <!-- CSS読み込み -->
     <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
@@ -19,6 +19,7 @@
     <link rel="shortcut icon" href="img/favicon.ico">
   </head>
 <body>
+<?php include_once("analyticstracking.php") ?>
 
 <?php
 //言語設定、内部エンコーディングを指定する
@@ -27,11 +28,12 @@ mb_internal_encoding("UTF-8");
 mb_http_output("UTF-8");
 
 $me = $_POST["me"];
-$mail = $_POST["mail"];
+$zipMail = $_POST["zipMail"];
 $you = $_POST["you"];
-$name1 = $_POST["name1"];
-$name2 = $_POST["name2"];
-$name3 = $_POST["name3"];
+$name1 = urldecode($_POST["name1"]);
+$name2 = urldecode($_POST["name2"]);
+$name3 = urldecode($_POST["name3"]);
+
 
 if($me==""){
   echo '<span style = "color:red"><b><u>診断エラー！<br>自分の名前が未入力です！<br>戻って入力しなおしてください。</u></b></span>';
@@ -57,6 +59,11 @@ if($name1 == "" && $name2 == "" && $name3 == ""){
   $kekkaText = "お二人の相性は残念ながら最悪です。<br>今のところ無難に仲良くできていますが、そう遠くない日に性格の不一致、居心地の悪さ等により、お互いが不幸になっていくことでしょう。そして二人はそれをあまり顔に出さないタイプなので、ただただ心が苦しくなっていきます。<br>ただし、これはあくまでも恋愛の相性です。友人としての相性は悪くありません。今仲良くしている人とは、わざわざ疎遠になる必要はなく、これからも末永く今よりも深く仲良くしていけます。相手を傷つけないためには、相手のテリトリーを侵害せず、踏み込みすぎず、大切な友人としての距離感で付き合っていくのが相手にとっての幸せです。";
 }
 
+//base64デコード
+$mail64 = (str_replace( array('_','-','.'), array('+','=','/'), $zipMail));
+$mail = base64_decode($mail64);
+//echo $mail;
+
 //日本語メール送信
 $to = $mail;
 $subject = $me."さんが相性診断した人は…";
@@ -74,18 +81,6 @@ if( $mflg==false ){
 	echo "<small>診断完了!!</small>";
 }
 ?>
-
-<h3>「<?=$me ?>」さんと<br>「<?=$you ?>」さんの相性は…</h3>
-
-<div id="drowareaContainer">
-<canvas id="sample" height="500" width="500"></canvas>
-<!-- パーセンテージはjsで遅れて入れる -->
-<p id="yesPosition"></p>
-</div>
-<p>
-  <?=$kekkaText ?>
-</p>
-<br><br><br>
 
 <script>
 $(document).ready(function(){
@@ -126,6 +121,23 @@ setTimeout(yesDelay, 2200);
 
 });
 </script>
+
+<!-- amazon -->
+<a href="http://www.amazon.co.jp/b/ref=assmth201504?_encoding=UTF8&at=shintan666-22&ie=UTF8&lc=jsb&node=3436874051">
+  <img class="img-responsive img-responsive-overwrite" src="img/hpc_diet_mtg0501_ad_mb640x100._V305343178_.png" width="100%" height="100%" border="0" alt="ヘルス&ビューティー"></a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=shintan666-22&l=jsb&o=9" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+
+<h3>「<?=$me ?>」さんと<br>「<?=$you ?>」さんの相性は…</h3>
+<div id="drowareaContainer">
+<canvas id="sample" height="500" width="500"></canvas>
+<!-- パーセンテージはjsで遅れて入れる -->
+<p id="yesPosition"></p>
+</div>
+<p>
+  <?=$kekkaText ?>
+</p>
+<br>
+
+
 
 <hr>
 

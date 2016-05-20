@@ -4,9 +4,16 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>秘密</title>
-    <meta name="description" content="秘密">
+    <title>秘密の相性診断メーカー</title>
+    <meta name="description" content="あなたの恋愛を応援!!気になる人の好きな人をこっそり覗き見ちゃう秘密の相性診断メーカー誕生!!">
     <meta name="keywords" content="占い,診断">
+    <meta property="og:title" content="秘密の相性診断メーカー">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://d4c.sakura.ne.jp/app/shindan/top.php">
+    <meta property="og:image" content="http://d4c.sakura.ne.jp/app/shindan/img/ogp.jpg">
+    <meta property="og:site_name" content="秘密の相性診断メーカー">
+    <meta property="og:description" content="あなたの恋愛を応援!!気になる人の好きな人をこっそり覗き見ちゃう秘密の相性診断メーカー誕生!!">
+
     <!-- CSS読み込み -->
     <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
@@ -19,8 +26,13 @@
   </head>
 
 <body>
+  <?php include_once("analyticstracking.php") ?>
 <img src="img/logo.png" width="50%" height="50%" class="img-responsive img-responsive-overwrite">
 <hr>
+
+<!-- amazon -->
+<a href="http://www.amazon.co.jp/b/ref=assmth201504?_encoding=UTF8&at=shintan666-22&ie=UTF8&lc=jsb&node=3436874051">
+  <img class="img-responsive img-responsive-overwrite" src="img/hpc_diet_mtg0501_ad_mb640x100._V305343178_.png" width="100%" height="100%" border="0" alt="ヘルス&ビューティー"></a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=shintan666-22&l=jsb&o=9" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
 
 <p><b>あなたには気になっている人がいますか？</b><br><br>
   このサイトは、<b>あなたの恋愛を応援</b>するために、<b>あなたの気になる人の好きな人</b>をこっそり覗き見る、相性診断を装ったツールを作成します。</b></p>
