@@ -1,0 +1,36 @@
+html {
+  height: 100%;
+}
+
+body {
+  background-color: #e8e3df;
+  width: 100%;
+  height: 100%;
+}
+
+.bookTitle {
+  font-size: 24px;
+  margin: 20px;
+}
+
+.bookMain td {
+  padding:8px;
+}
+
+.booked table , td, th {
+	border: 1px solid #595959;
+	border-collapse: collapse;
+}
+.booked td, th {
+	padding: 3px;
+	height: 25px;
+}
+.booked th {
+	background: #f0e6cc;
+}
+.even {
+	background: #fbf8f0;
+}
+.odd {
+	background: #fefcf9;
+}
